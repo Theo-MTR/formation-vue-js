@@ -10,6 +10,12 @@
  *    - utiliser l'opérateur ternaire (if interdit)
  */
 
-function ternaryChain(a, b) {}
+function ternaryChain(a, b) {
+    return a > b ? ">" : a < b ? "<" : "="
+}
+
+console.log(ternaryChain(3, 5));
+console.log(ternaryChain(10, 5));
+console.log(ternaryChain(10, 10));
 
 module.exports = ternaryChain;
