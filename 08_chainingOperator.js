@@ -1,4 +1,14 @@
+const obj = {
+    name: "John",
+    group: {
+        name: "admin"
+    }
+};
 
+const objDeux = {
+    name: "John",
+    group: null
+};
 /**
  * utilisez l'opérateur de chaine ?. pour accéder au nom du groupe auquel appartient l'utilisateur
  * Attention, l'utilisateur peut ne pas avoir de groupe (null)
@@ -16,6 +26,8 @@
  * 
  */
 
-const getGroupName = (obj) => {}
+const getGroupName = (obj) => obj.group?.name;
+console.log(getGroupName(obj));
+console.log(getGroupName(objDeux));
 
 module.exports = {getGroupName};
