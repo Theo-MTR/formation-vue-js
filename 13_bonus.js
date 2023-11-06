@@ -25,18 +25,21 @@
  */
 
 const countWords = (sentence) => {
-  const words = sentence.split(' ');
-  return words.reduce((obj, word) => {
-    obj[word] = (obj[word] || 0) + 1;
-    return obj;
-  }, {});
+    return sentence
+        .split(' ')
+        .filter((word) => word !== '')
+        .reduce((obj, word) => {
+            obj[word] = (obj[word] || 0) + 1;
+            return obj;
+        }, {});
 };
 console.log(countWords("la pomme est rouge et la banane est jaune"));
+console.log(countWords(""));
 
 let obj = {
-  "pommes": 3,
-  "bananes": 1,
-  "cerises": 8
+    "pommes": 3,
+    "bananes": 1,
+    "cerises": 8
 };
 
 /**
@@ -63,9 +66,9 @@ let obj = {
  */
 
 const sortObjectByValue = (obj) => {
-  return Object.fromEntries(
-      Object.entries(obj).sort((a, b) => a[1] - b[1])
-  );
+    return Object.fromEntries(
+        Object.entries(obj).sort((a, b) => a[1] - b[1])
+    );
 };
 console.log(sortObjectByValue(obj));
 module.exports = {countWords, sortObjectByValue};
