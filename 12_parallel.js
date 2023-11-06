@@ -13,10 +13,17 @@
  * documentation: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
 */
 
-//const {apiResponse} = require("./11_async");
+const {apiResponse} = require("./11_async");
 
 const parallel = () => {
-
+    let resUn = apiResponse('https://jsonplaceholder.typicode.com/todos/1');
+    let resDeux = apiResponse('https://jsonplaceholder.typicode.com/todos/2');
+    let resTrois = apiResponse('https://jsonplaceholder.typicode.com/todos/3');
+    Promise.all([resUn, resDeux, resTrois]).then(res => {
+        console.log(res);
+    })
 }
+
+parallel();
 
 module.exports = {parallel};
