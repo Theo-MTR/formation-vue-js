@@ -22,7 +22,7 @@ console.log(extractFirstTwo(tableauChiffre));
  * exemple: [1, 2, 3] => [2, 3]
  */
 
-const extractRest = ([a, ...rest]) => rest;
+const extractRest = ([, ...rest]) => rest;
 console.log(extractRest(tableauChiffre));
 
 /**
@@ -37,7 +37,7 @@ console.log(extractRest(tableauChiffre));
  * - interdiction d'utiliser l'opérateur "." pour accéder au champ "name"
  */
 
-const extractName = ({name, ...rest}) => name;
+const extractName = ({name}) => name;
 console.log(extractName(toto));
 
 /**
