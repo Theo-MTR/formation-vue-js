@@ -19,11 +19,11 @@ const parallel = () => {
     let resUn = apiResponse('https://jsonplaceholder.typicode.com/todos/1');
     let resDeux = apiResponse('https://jsonplaceholder.typicode.com/todos/2');
     let resTrois = apiResponse('https://jsonplaceholder.typicode.com/todos/3');
-    Promise.all([resUn, resDeux, resTrois]).then(res => {
-        console.log(res);
-    })
+    return Promise.all([resUn, resDeux, resTrois]).then(res => res)
 }
 
-parallel();
+parallel().then(r => {
+    console.log(r)
+});
 
 module.exports = {parallel};

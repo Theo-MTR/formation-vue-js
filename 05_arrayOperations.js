@@ -40,7 +40,7 @@ const filterNameStartByA = (array) => array.filter((value) => value.startsWith('
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const sum = (array) => array.reduce((a, b) => a + b);
+const sum = (array) => array.reduce((a, b) => a + b, 0);
 
 /**
  * Utiliser la fonction .find sur le tableau passé en paramètre
@@ -61,7 +61,7 @@ const sum = (array) => array.reduce((a, b) => a + b);
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const findUserById = (array, id) => array.find((user) => user.id === id);
+const findUserById = (array, id) => array.find((user) => user.id === id).name;
 
 
 console.log(multiplyByTwo(tableauChiffre));
